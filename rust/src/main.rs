@@ -8,7 +8,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         Ok(max) => max,
         Err(e) => panic!("Invalid input: {e}")
     };
-    // let max: i32 = input.trim().parse()?;
+    
     fizzbuzz_upto(max);
     Ok(())
 }
