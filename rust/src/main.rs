@@ -4,8 +4,11 @@ fn main() -> Result<(), Box<dyn Error>> {
     println!("Please input the maximum.");
     let mut input = String::new();
     stdin().read_line(&mut input)?;
-
-    let max: i32 = input.trim().parse()?;
+    let max: i32 = match input.trim().parse() {
+        Ok(max) => max,
+        Err(e) => panic!("Invalid input: {e}")
+    };
+    // let max: i32 = input.trim().parse()?;
     fizzbuzz_upto(max);
     Ok(())
 }
